@@ -23,7 +23,7 @@ public class PrimeNumbersInJava {
         if (num == 2) return true; // 2 is prime
         if (num % 2 == 0) return false; // Exclude even numbers
 
-        for (int i = 3; i <= Math.sqrt(num); i += 2) { // Check only odd factors
+        for (int i = 3; i * i <= num; i += 2) { // Check only odd factors
             if (num % i == 0) {
                 return false; // Found a divisor, not prime
             }
