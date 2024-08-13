@@ -19,10 +19,11 @@ public class PrimeNumbersInJava {
 
     // Method to check if a number is prime
     public static boolean isPrime(int num) {
-        if (num <= 1) {
-            return false; // 0 and 1 are not prime numbers
-        }
-        for (int i = 2; i <= Math.sqrt(num); i++) {
+        if (num < 2) return false; // 0 and 1 are not prime numbers
+        if (num == 2) return true; // 2 is prime
+        if (num % 2 == 0) return false; // Exclude even numbers
+
+        for (int i = 3; i <= Math.sqrt(num); i += 2) { // Check only odd factors
             if (num % i == 0) {
                 return false; // Found a divisor, not prime
             }
